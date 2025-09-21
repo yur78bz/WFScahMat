@@ -35,7 +35,7 @@ namespace WFShahMat
             rooks[2] = txtRooks3.Text.Trim();
 
             // проверка корректности ввода координат короля
-            if (!IsValidPosition(king))
+            if (!IsValidPosition1(king))
             {
                 MessageBox.Show("Не кооректные координаты короля. Введите значение в формате a1-h8");
                 return;
@@ -44,7 +44,7 @@ namespace WFShahMat
             //  проверка корректности ввода координат ладей
             foreach (var rook in rooks)
             {
-                if (!IsValidPosition(rook))
+                if (!IsValidPosition1(rook))
                 {
                     MessageBox.Show($"Не кооректные координаты ладьи. Введите значение в формате a1-h8");
                     return;
@@ -92,7 +92,7 @@ namespace WFShahMat
         }
 
         // метод для проверки корректности ввода координат
-        private bool IsValidPosition(string position)
+        private bool IsValidPosition1(string position)
         {
             // проверяется что длина строки равна 2
             if (position.Length != 2) return false;
